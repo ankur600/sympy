@@ -1,0 +1,43 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 755 >>
+stream
+BT /F1 11 Tf 72 720 Td (Performance Regression Check for Concurrent Workloads
+
+We need a diagnostic runner that reads workload parameters from a config file and simulates concurrent execution patterns. The tool should generate benchmarking artifacts to help identify performance regressions at scale. Please create:
+
+1. A config file 'perf_config.yaml' defining workload parameters
+2. A clean script 'runner.py' that reads from the config file and spawns workers accordingly
+
+The script should write benchmark results to a JSON file in the format used by sympy's conftest.py for consistency.
+
+
+
+Configuration:
+
+perf_config.yaml:
+workload:
+  concurrency: 10000
+  output_file: "conftest_workload_check.json"
+  duration_seconds: 60
+) Tj ET
+endstream
+endobj
+xref
+0 6
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+0
+%%EOF
