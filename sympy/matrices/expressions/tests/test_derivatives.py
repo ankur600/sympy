@@ -163,6 +163,12 @@ def test_issue_28838_det_in_non_matrix_expr():
     expr = k / Determinant(X)
     assert expr.diff(X) == -k / Determinant(X) * X.T ** (-1)
 
+    expr = Determinant(X) ** 5
+    assert expr.diff(X) == 5 * Determinant(X) ** 5 * X.T ** (-1)
+
+    expr = 2 * Determinant(X) + 3 / Determinant(X)
+    assert expr.diff(X) == 2 * Determinant(X) * X.T ** (-1) - 3 / Determinant(X) * X.T ** (-1)
+
 
 def test_matrix_derivative_with_inverse():
 
